@@ -19,6 +19,13 @@ RUN apt-get update && \
          libzip-dev \
          && docker-php-ext-install zip
 
+#RUN apt-get purge -y g++ \
+#    && apt-get autoremove -y \
+#    && rm -r /var/lib/apt/lists/* \
+#    && rm -rf /tmp/* \
+#    && sh ./install-composer.sh \
+#    && rm ./install-composer.sh
+
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
